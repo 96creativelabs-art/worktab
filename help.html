@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - WorkTab</title>
+    <meta name="description" content="Get help with WorkTab - keyboard shortcuts, installation guide, and frequently asked questions.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'worktab': {
+                            'primary': '#F8F7F5',
+                            'secondary': '#ffffff',
+                            'accent': '#0066cc',
+                            'text': '#000000',
+                            'text-secondary': '#4a4a4a',
+                            'text-muted': '#8a8a8a',
+                            'border-light': '#e8e8e8',
+                            'border-medium': '#d0d0d0',
+                            'accent-green': '#00a86b',
+                            'accent-red': '#e74c3c',
+                            'accent-orange': '#f39c12'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #F8F7F5 0%, #ffffff 100%);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(0,102,204,0.1) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .shortcut-key {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #374151;
+        }
+        [data-theme="dark"] .shortcut-key {
+            background: #374151;
+            border-color: #4b5563;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+<body class="font-sans text-worktab-text bg-worktab-primary">
+    <!-- Navigation -->
+    <nav class="bg-worktab-secondary/80 backdrop-blur-md border-b border-worktab-light sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+                        <img src="logo.png" alt="WorkTab Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-xl font-bold text-worktab-text">WorkTab</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Home</a>
+                    <a href="index.html#features" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Features</a>
+                    <a href="index.html#screenshots" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Screenshots</a>
+                    <a href="index.html#download" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Download</a>
+                </div>
+                <a href="index.html#download" class="bg-worktab-text text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                    Get WorkTab
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg hero-pattern py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+                Help Center
+            </h1>
+            <p class="text-xl text-worktab-text-secondary max-w-2xl mx-auto">
+                Everything you need to know about WorkTab - from installation to advanced features.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Table of Contents -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <h3 class="text-lg font-semibold mb-4">Table of Contents</h3>
+                        <nav class="space-y-2">
+                            <a href="#installation" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors">Installation Guide</a>
+                            <a href="#keyboard-shortcuts" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors">Keyboard Shortcuts</a>
+                            <a href="#getting-started" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors">Getting Started</a>
+                            <a href="#features" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors">Features Guide</a>
+                            <a href="#faq" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors">FAQ</a>
+                            <a href="#troubleshooting" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors">Troubleshooting</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:col-span-2 space-y-16">
+                    <!-- Installation Guide -->
+                    <section id="installation">
+                        <h2 class="text-3xl font-bold mb-6">Installation Guide</h2>
+                        <div class="space-y-6">
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Step 1: Download WorkTab</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    WorkTab is available as a Chrome extension. You can install it from the Chrome Web Store or load it as an unpacked extension for development.
+                                </p>
+                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                    <h4 class="font-semibold mb-2">Chrome Web Store (Recommended)</h4>
+                                    <ol class="list-decimal list-inside space-y-2 text-worktab-text-secondary">
+                                        <li>Visit the Chrome Web Store</li>
+                                        <li>Search for "WorkTab"</li>
+                                        <li>Click "Add to Chrome"</li>
+                                        <li>Confirm the installation</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Step 2: First Launch</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    After installation, you'll see the WorkTab icon in your browser toolbar. Click it to open the extension.
+                                </p>
+                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                    <h4 class="font-semibold mb-2">Initial Setup</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
+                                        <li>WorkTab will automatically detect your current tabs</li>
+                                        <li>Create your first workspace by clicking "New Workspace"</li>
+                                        <li>Organize your tabs by dragging them into workspaces</li>
+                                        <li>Customize settings in the navigation menu</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Keyboard Shortcuts -->
+                    <section id="keyboard-shortcuts">
+                        <h2 class="text-3xl font-bold mb-6">Keyboard Shortcuts</h2>
+                        <div class="space-y-4">
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Essential Shortcuts</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Open Quick Switcher</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Quickly switch between workspaces and tabs</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Ctrl</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">K</kbd>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Toggle Side Panel</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Open/close the WorkTab side panel</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Alt</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">Shift</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">P</kbd>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Add Active Tab to Last Workspace</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Add the current tab to your most recently used workspace</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Alt</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">Shift</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">A</kbd>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Add All Tabs to Last Workspace</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Add all current tabs to your most recently used workspace</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Alt</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">Shift</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">S</kbd>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Mac Users</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    On Mac, use <kbd class="shortcut-key">Cmd</kbd> instead of <kbd class="shortcut-key">Ctrl</kbd> for the Quick Switcher:
+                                </p>
+                                <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                    <div>
+                                        <h4 class="font-semibold">Open Quick Switcher (Mac)</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Quickly switch between workspaces and tabs</p>
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <kbd class="shortcut-key">Cmd</kbd>
+                                        <span class="text-worktab-text-muted">+</span>
+                                        <kbd class="shortcut-key">K</kbd>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Getting Started -->
+                    <section id="getting-started">
+                        <h2 class="text-3xl font-bold mb-6">Getting Started</h2>
+                        <div class="space-y-6">
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Creating Your First Workspace</h3>
+                                <ol class="list-decimal list-inside space-y-3 text-worktab-text-secondary">
+                                    <li>Click the WorkTab icon in your browser toolbar</li>
+                                    <li>Click "New Workspace" in the navigation bar</li>
+                                    <li>Enter a name for your workspace (e.g., "Work Projects", "Research")</li>
+                                    <li>Choose a color for your workspace</li>
+                                    <li>Click "Create Workspace"</li>
+                                </ol>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Adding Tabs to Workspaces</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Method 1: Drag and Drop</h4>
+                                        <p class="text-worktab-text-secondary">Simply drag tabs from your browser into the workspace area.</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Method 2: Right-Click Menu</h4>
+                                        <p class="text-worktab-text-secondary mb-2">Right-click on any tab or web page to access WorkTab options:</p>
+                                        <ul class="list-disc list-inside space-y-1 text-worktab-text-secondary text-sm">
+                                            <li><strong>"Add to Workspace"</strong> - Choose an existing workspace</li>
+                                            <li><strong>"Create New Workspace"</strong> - Create a new workspace with this tab</li>
+                                            <li><strong>"Create rule for this site"</strong> - Auto-organize future tabs from this domain</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Method 3: Keyboard Shortcuts</h4>
+                                        <p class="text-worktab-text-secondary">Use Alt+Shift+A to add the active tab or Alt+Shift+S to add all tabs to the last used workspace.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Features Guide -->
+                    <section id="features">
+                        <h2 class="text-3xl font-bold mb-6">Features Guide</h2>
+                        <div class="space-y-6">
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Auto-Suggestions</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    WorkTab automatically detects when you have 5 or more tabs from the same domain and suggests creating a workspace to organize them.
+                                </p>
+                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                    <h4 class="font-semibold mb-2">How it works:</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
+                                        <li>WorkTab monitors your open tabs</li>
+                                        <li>When it detects multiple tabs from the same domain, it shows a suggestion</li>
+                                        <li>Click "Group" to create a workspace with those tabs</li>
+                                        <li>You can dismiss suggestions if you don't want to group them</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Auto-Save Sessions</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    WorkTab automatically saves your session every minute, so you never lose your work.
+                                </p>
+                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                    <h4 class="font-semibold mb-2">Session Management:</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
+                                        <li>Automatic saving every minute (configurable)</li>
+                                        <li>One-click session restoration</li>
+                                        <li>Workspace state preservation</li>
+                                        <li>Tab order and grouping maintained</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Context Menu Integration</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    WorkTab integrates seamlessly with your browser's right-click menu for quick access to workspace features.
+                                </p>
+                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                    <h4 class="font-semibold mb-2">Right-Click Options:</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
+                                        <li><strong>Add to Workspace</strong> - Select from existing workspaces</li>
+                                        <li><strong>Create New Workspace</strong> - Instantly create a new workspace with the current tab</li>
+                                        <li><strong>Create rule for this site</strong> - Set up automatic organization for future tabs from this domain</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Analytics & Insights</h3>
+                                <p class="text-worktab-text-secondary mb-4">
+                                    Track your browsing habits and productivity with detailed analytics.
+                                </p>
+                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                    <h4 class="font-semibold mb-2">Available Analytics:</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
+                                        <li>Most visited websites</li>
+                                        <li>Session duration tracking</li>
+                                        <li>Tab activity patterns</li>
+                                        <li>Workspace usage statistics</li>
+                                        <li>Peak usage times</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FAQ -->
+                    <section id="faq">
+                        <h2 class="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+                        <div class="space-y-6">
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">General Questions</h3>
+                                <div class="space-y-6">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Is WorkTab free to use?</h4>
+                                        <p class="text-worktab-text-secondary">Yes, WorkTab is completely free to use with no limitations or premium features.</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Does WorkTab work with other browsers?</h4>
+                                        <p class="text-worktab-text-secondary">Currently, WorkTab is only available for Chrome and Chromium-based browsers (like Edge, Brave, etc.).</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Is my data private?</h4>
+                                        <p class="text-worktab-text-secondary">Yes, all your data stays on your device. WorkTab doesn't collect, store, or transmit any personal information.</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Can I sync my workspaces across devices?</h4>
+                                        <p class="text-worktab-text-secondary">Currently, WorkTab stores data locally on your device. Cloud sync features may be added in future updates.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Technical Questions</h3>
+                                <div class="space-y-6">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">How do I backup my workspaces?</h4>
+                                        <p class="text-worktab-text-secondary">Go to the Backup & Restore section in WorkTab settings. You can export your data as a JSON file and import it later.</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Can I customize the auto-save interval?</h4>
+                                        <p class="text-worktab-text-secondary">Yes, you can change the auto-save interval in the Autosave settings. The default is 1 minute, but you can adjust it to your preference.</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">What happens if I uninstall WorkTab?</h4>
+                                        <p class="text-worktab-text-secondary">Your workspaces and settings will be lost unless you've backed them up. Make sure to export your data before uninstalling.</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">How do I use the right-click context menu?</h4>
+                                        <p class="text-worktab-text-secondary">Right-click on any tab or web page to see WorkTab options. You can add tabs to existing workspaces, create new workspaces, or set up automatic rules for specific websites.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Troubleshooting -->
+                    <section id="troubleshooting">
+                        <h2 class="text-3xl font-bold mb-6">Troubleshooting</h2>
+                        <div class="space-y-6">
+                            <div class="bg-worktab-primary rounded-lg p-6">
+                                <h3 class="text-xl font-semibold mb-4">Common Issues</h3>
+                                <div class="space-y-6">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">WorkTab icon is not showing</h4>
+                                        <p class="text-worktab-text-secondary mb-2">If you can't see the WorkTab icon in your toolbar:</p>
+                                        <ul class="list-disc list-inside space-y-1 text-worktab-text-secondary">
+                                            <li>Check if the extension is enabled in chrome://extensions/</li>
+                                            <li>Try pinning the extension to your toolbar</li>
+                                            <li>Refresh your browser</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Keyboard shortcuts not working</h4>
+                                        <p class="text-worktab-text-secondary mb-2">If keyboard shortcuts aren't responding:</p>
+                                        <ul class="list-disc list-inside space-y-1 text-worktab-text-secondary">
+                                            <li>Check if another extension is using the same shortcuts</li>
+                                            <li>Go to chrome://extensions/shortcuts to customize shortcuts</li>
+                                            <li>Make sure WorkTab has the necessary permissions</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Workspaces not saving</h4>
+                                        <p class="text-worktab-text-secondary mb-2">If your workspaces aren't being saved:</p>
+                                        <ul class="list-disc list-inside space-y-1 text-worktab-text-secondary">
+                                            <li>Check your browser's storage permissions</li>
+                                            <li>Clear browser cache and try again</li>
+                                            <li>Disable and re-enable the extension</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-worktab-text text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="logo.png" alt="WorkTab Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-xl font-bold">WorkTab</span>
+                    </div>
+                    <p class="text-worktab-text-muted">
+                        Organize your browser tabs into productive workspaces. 
+                        Boost your productivity with smart tab management.
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <h4 class="font-semibold">Product</h4>
+                    <ul class="space-y-2 text-worktab-text-muted">
+                        <li><a href="index.html#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="index.html#screenshots" class="hover:text-white transition-colors">Screenshots</a></li>
+                        <li><a href="index.html#download" class="hover:text-white transition-colors">Download</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4">
+                    <h4 class="font-semibold">Support</h4>
+                    <ul class="space-y-2 text-worktab-text-muted">
+                        <li><a href="help.html" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="space-y-4">
+                    <h4 class="font-semibold">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-worktab-text-muted hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-worktab-text-muted hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-worktab-text-secondary mt-8 pt-8 text-center text-worktab-text-muted">
+                <p>&copy; 2024 WorkTab. All rights reserved. Made with ❤️ for productivity enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

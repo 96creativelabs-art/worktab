@@ -1,0 +1,27 @@
+{
+  "name": "worktab-website",
+  "version": "1.0.0",
+  "description": "WorkTab - Organize your browser tabs into workspaces",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build step required'",
+    "start": "echo 'Static site - no start step required'"
+  },
+  "keywords": [
+    "browser",
+    "tabs",
+    "workspace",
+    "productivity",
+    "chrome-extension"
+  ],
+  "author": "WorkTab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/worktab-website.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
