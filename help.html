@@ -162,15 +162,27 @@
                         <h2 class="text-3xl font-bold mb-6">Keyboard Shortcuts</h2>
                         <div class="space-y-4">
                             <div class="bg-worktab-primary rounded-lg p-6">
-                                <h3 class="text-xl font-semibold mb-4">Essential Shortcuts</h3>
+                                <h3 class="text-xl font-semibold mb-4">Essential Keyboard Shortcuts</h3>
                                 <div class="space-y-4">
                                     <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
                                         <div>
-                                            <h4 class="font-semibold">Open Quick Switcher</h4>
-                                            <p class="text-sm text-worktab-text-secondary">Quickly switch between workspaces and tabs</p>
+                                            <h4 class="font-semibold">Open Quick Switcher (Windows/Linux)</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Fast tab switching with fuzzy search</p>
                                         </div>
                                         <div class="flex space-x-1">
                                             <kbd class="shortcut-key">Ctrl</kbd>
+                                            <span class="text-worktab-text-muted">+</span>
+                                            <kbd class="shortcut-key">K</kbd>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Open Quick Switcher (Mac)</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Fast tab switching with fuzzy search</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Cmd</kbd>
                                             <span class="text-worktab-text-muted">+</span>
                                             <kbd class="shortcut-key">K</kbd>
                                         </div>
@@ -206,34 +218,61 @@
 
                                     <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
                                         <div>
-                                            <h4 class="font-semibold">Add All Tabs to Last Workspace</h4>
-                                            <p class="text-sm text-worktab-text-secondary">Add all current tabs to your most recently used workspace</p>
+                                            <h4 class="font-semibold">Suspend Inactive Tabs</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Memory management for inactive tabs to improve performance</p>
                                         </div>
                                         <div class="flex space-x-1">
                                             <kbd class="shortcut-key">Alt</kbd>
                                             <span class="text-worktab-text-muted">+</span>
                                             <kbd class="shortcut-key">Shift</kbd>
                                             <span class="text-worktab-text-muted">+</span>
-                                            <kbd class="shortcut-key">S</kbd>
+                                            <kbd class="shortcut-key">Z</kbd>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="bg-worktab-primary rounded-lg p-6">
-                                <h3 class="text-xl font-semibold mb-4">Mac Users</h3>
-                                <p class="text-worktab-text-secondary mb-4">
-                                    On Mac, use <kbd class="shortcut-key">Cmd</kbd> instead of <kbd class="shortcut-key">Ctrl</kbd> for the Quick Switcher:
-                                </p>
-                                <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
-                                    <div>
-                                        <h4 class="font-semibold">Open Quick Switcher (Mac)</h4>
-                                        <p class="text-sm text-worktab-text-secondary">Quickly switch between workspaces and tabs</p>
+                                <h3 class="text-xl font-semibold mb-4">Quick Switcher Navigation</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Search and Filter</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Type to search across all workspaces and tabs</p>
+                                        </div>
+                                        <div class="text-sm text-worktab-text-muted">Just start typing</div>
                                     </div>
-                                    <div class="flex space-x-1">
-                                        <kbd class="shortcut-key">Cmd</kbd>
-                                        <span class="text-worktab-text-muted">+</span>
-                                        <kbd class="shortcut-key">K</kbd>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Navigate Results</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Move up and down through search results</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">↑</kbd>
+                                            <span class="text-worktab-text-muted">/</span>
+                                            <kbd class="shortcut-key">↓</kbd>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Open Selected Tab</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Activate the highlighted tab or workspace</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Enter</kbd>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-worktab-light">
+                                        <div>
+                                            <h4 class="font-semibold">Close Quick Switcher</h4>
+                                            <p class="text-sm text-worktab-text-secondary">Exit without making changes</p>
+                                        </div>
+                                        <div class="flex space-x-1">
+                                            <kbd class="shortcut-key">Esc</kbd>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -282,69 +321,206 @@
 
                     <!-- Features Guide -->
                     <section id="features">
-                        <h2 class="text-3xl font-bold mb-6">Features Guide</h2>
+                        <h2 class="text-3xl font-bold mb-6">Complete Features Guide</h2>
                         <div class="space-y-6">
+                            <!-- Core Workspace Features -->
                             <div class="bg-worktab-primary rounded-lg p-6">
-                                <h3 class="text-xl font-semibold mb-4">Auto-Suggestions</h3>
-                                <p class="text-worktab-text-secondary mb-4">
-                                    WorkTab automatically detects when you have 5 or more tabs from the same domain and suggests creating a workspace to organize them.
-                                </p>
-                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
-                                    <h4 class="font-semibold mb-2">How it works:</h4>
-                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
-                                        <li>WorkTab monitors your open tabs</li>
-                                        <li>When it detects multiple tabs from the same domain, it shows a suggestion</li>
-                                        <li>Click "Group" to create a workspace with those tabs</li>
-                                        <li>You can dismiss suggestions if you don't want to group them</li>
-                                    </ul>
+                                <h3 class="text-xl font-semibold mb-4">Core Workspace Features</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Smart Workspaces</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Create, edit, and manage color-coded workspaces with 12 color options</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Drag & Drop</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Reorder tabs and move between workspaces with intuitive drag & drop</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Multi-Select</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Select multiple tabs for bulk actions and operations</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Workspace Templates</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Pre-built templates for productivity, development, and business workflows</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Workspace Folders</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Organize workspaces into collapsible categories and folders</p>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Workspace Backup</h4>
+                                        <p class="text-sm text-worktab-text-secondary">Export and import workspace data for backup and sharing</p>
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- Smart Automation -->
                             <div class="bg-worktab-primary rounded-lg p-6">
-                                <h3 class="text-xl font-semibold mb-4">Auto-Save Sessions</h3>
-                                <p class="text-worktab-text-secondary mb-4">
-                                    WorkTab automatically saves your session every minute, so you never lose your work.
-                                </p>
-                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
-                                    <h4 class="font-semibold mb-2">Session Management:</h4>
-                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
-                                        <li>Automatic saving every minute (configurable)</li>
-                                        <li>One-click session restoration</li>
-                                        <li>Workspace state preservation</li>
-                                        <li>Tab order and grouping maintained</li>
-                                    </ul>
+                                <h3 class="text-xl font-semibold mb-4">Smart Automation</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Auto-Suggestions</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">WorkTab automatically detects when you have 5+ tabs from the same domain and suggests creating a workspace to organize them.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Monitors your open tabs in real-time</li>
+                                            <li>Shows proactive suggestions when patterns are detected</li>
+                                            <li>One-click workspace creation from suggestions</li>
+                                            <li>Dismissible suggestions for flexibility</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Domain Rules</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Set up automatic routing rules for tabs based on domain patterns.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Auto-route tabs from specific domains to designated workspaces</li>
+                                            <li>Create rules for common patterns (e.g., all GitHub tabs to "Development")</li>
+                                            <li>Right-click any page to create rules for that site</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Tab Suspension</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Memory management for inactive tabs to improve browser performance.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Automatically suspend tabs that haven't been used recently</li>
+                                            <li>Configurable suspension thresholds</li>
+                                            <li>One-click unsuspend all tabs</li>
+                                            <li>Keyboard shortcut: Alt+Shift+Z</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Zombie Tab Detection</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Find and close inactive tabs that are consuming resources.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Identifies tabs that haven't been accessed in a specified time</li>
+                                            <li>Configurable detection thresholds</li>
+                                            <li>Bulk close inactive tabs</li>
+                                            <li>Preview before closing</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Duplicate Detection</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Find and merge duplicate tabs to reduce clutter and improve organization.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Scans all tabs for duplicates</li>
+                                            <li>Shows duplicate tabs with merge options</li>
+                                            <li>Bulk close duplicate tabs</li>
+                                            <li>Keep the most recently active tab</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Auto-Save Sessions</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Never lose your work with automatic session backup.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Automatic saving every minute (configurable)</li>
+                                            <li>One-click session restoration</li>
+                                            <li>Workspace state preservation</li>
+                                            <li>Tab order and grouping maintained</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- Advanced Features -->
                             <div class="bg-worktab-primary rounded-lg p-6">
-                                <h3 class="text-xl font-semibold mb-4">Context Menu Integration</h3>
-                                <p class="text-worktab-text-secondary mb-4">
-                                    WorkTab integrates seamlessly with your browser's right-click menu for quick access to workspace features.
-                                </p>
-                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
-                                    <h4 class="font-semibold mb-2">Right-Click Options:</h4>
-                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
-                                        <li><strong>Add to Workspace</strong> - Select from existing workspaces</li>
-                                        <li><strong>Create New Workspace</strong> - Instantly create a new workspace with the current tab</li>
-                                        <li><strong>Create rule for this site</strong> - Set up automatic organization for future tabs from this domain</li>
-                                    </ul>
+                                <h3 class="text-xl font-semibold mb-4">Advanced Features</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Advanced Search</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Powerful search with filters and sorting options.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Search across workspaces, tabs, and suspended tabs</li>
+                                            <li>Filter by domain, title, or URL</li>
+                                            <li>Sort by relevance, title, domain, last active, or created date</li>
+                                            <li>Save search queries for quick access</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Quick Switcher</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Fast tab switching with fuzzy search (Ctrl+K / Cmd+K).</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Fuzzy search across all workspaces and tabs</li>
+                                            <li>Navigate with arrow keys</li>
+                                            <li>Open selected tab with Enter</li>
+                                            <li>Close with Esc</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Tab History</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Track tab usage over time with detailed analytics.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Track when each website was last accessed</li>
+                                            <li>Monitor visit frequency and patterns</li>
+                                            <li>Session duration tracking</li>
+                                            <li>Peak usage times analysis</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Analytics Dashboard</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Comprehensive usage statistics and productivity insights.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Most visited websites and domains</li>
+                                            <li>Session duration and activity patterns</li>
+                                            <li>Workspace usage statistics</li>
+                                            <li>Time range filtering (Today, Week, Month, All Time)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Comprehensive Settings</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Customize every aspect of WorkTab's behavior.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Autosave interval configuration</li>
+                                            <li>Domain grouping thresholds</li>
+                                            <li>Drag and multi-select behavior</li>
+                                            <li>Toast notification settings</li>
+                                            <li>Zombie tab detection thresholds</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- User Experience -->
                             <div class="bg-worktab-primary rounded-lg p-6">
-                                <h3 class="text-xl font-semibold mb-4">Analytics & Insights</h3>
-                                <p class="text-worktab-text-secondary mb-4">
-                                    Track your browsing habits and productivity with detailed analytics.
-                                </p>
-                                <div class="bg-white rounded-lg p-4 border border-worktab-light">
-                                    <h4 class="font-semibold mb-2">Available Analytics:</h4>
-                                    <ul class="list-disc list-inside space-y-2 text-worktab-text-secondary">
-                                        <li>Most visited websites</li>
-                                        <li>Session duration tracking</li>
-                                        <li>Tab activity patterns</li>
-                                        <li>Workspace usage statistics</li>
-                                        <li>Peak usage times</li>
-                                    </ul>
+                                <h3 class="text-xl font-semibold mb-4">User Experience</h3>
+                                <div class="space-y-4">
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Context Menu Integration</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Right-click integration for quick workspace actions.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li><strong>Add to Workspace</strong> - Select from existing workspaces</li>
+                                            <li><strong>Create New Workspace</strong> - Instantly create a new workspace with the current tab</li>
+                                            <li><strong>Create rule for this site</strong> - Set up automatic organization for future tabs from this domain</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Light/Dark Mode</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Theme switching with system preference detection.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Automatic theme detection</li>
+                                            <li>Manual theme switching</li>
+                                            <li>Consistent theming across all modals</li>
+                                            <li>System preference integration</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Side Panel Support</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Dedicated side panel for persistent workspace access.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Persistent side panel view</li>
+                                            <li>Keyboard shortcut: Alt+Shift+P</li>
+                                            <li>Full feature parity with popup</li>
+                                            <li>Always accessible workspace management</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 border border-worktab-light">
+                                        <h4 class="font-semibold mb-2">Responsive Design</h4>
+                                        <p class="text-sm text-worktab-text-secondary mb-2">Works perfectly on all screen sizes from 500px to desktop.</p>
+                                        <ul class="list-disc list-inside space-y-1 text-sm text-worktab-text-secondary">
+                                            <li>Mobile-responsive interface</li>
+                                            <li>Minimum 500px width support</li>
+                                            <li>Touch-friendly interactions</li>
+                                            <li>Optimized for all device types</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
