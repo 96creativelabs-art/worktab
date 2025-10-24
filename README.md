@@ -67,15 +67,14 @@ The website uses WorkTab's exact brand colors from the extension:
 - **Main Brand Color**: `#000000` (black) - Used for primary buttons, logos, and key elements
 - Primary Background: `#F8F7F5` (light background)
 - Secondary Background: `#ffffff` (white)
-- Accent Blue: `#0066cc` (blue) - Used as secondary accent color
 - Text Primary: `#000000` (black)
 - Text Secondary: `#4a4a4a` (medium gray)
 - Text Muted: `#8a8a8a` (light gray)
 - Border Light: `#e8e8e8` (light border)
 - Border Medium: `#d0d0d0` (medium border)
-- Accent Green: `#00a86b` (green)
-- Accent Red: `#e74c3c` (red)
-- Accent Orange: `#f39c12` (orange)
+- Accent Green: `#4a4a4a` (dark gray)
+- Accent Red: `#8a8a8a` (light gray)
+- Accent Orange: `#F8F7F5` (off-white)
 
 ### Content
 Edit the HTML file to customize:

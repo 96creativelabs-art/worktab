@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WorkTab - Organize Your Browser Tabs Into Workspaces</title>
-    <meta name="description" content="Transform your chaotic browser tabs into organized, color-coded workspaces. Auto-suggest grouping, autosave sessions, and boost your productivity with WorkTab.">
+    <meta name="description" content="Organize browser tabs into color-coded workspaces. Auto-suggest grouping, autosave sessions, and restore easily. Version 1.0.0 - Free Chrome Extension.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,15 +18,15 @@
                         'worktab': {
                             'primary': '#F8F7F5',
                             'secondary': '#ffffff',
-                            'accent': '#0066cc',
+                            'accent': '#000000',
                             'text': '#000000',
                             'text-secondary': '#4a4a4a',
                             'text-muted': '#8a8a8a',
                             'border-light': '#e8e8e8',
                             'border-medium': '#d0d0d0',
-                            'accent-green': '#00a86b',
-                            'accent-red': '#e74c3c',
-                            'accent-orange': '#f39c12'
+                            'accent-green': '#4a4a4a',
+                            'accent-red': '#8a8a8a',
+                            'accent-orange': '#F8F7F5'
                         }
                     },
                     fontFamily: {
@@ -43,7 +43,7 @@
             background: linear-gradient(135deg, #F8F7F5 0%, #ffffff 100%);
         }
         .hero-pattern {
-            background-image: radial-gradient(circle at 1px 1px, rgba(0,102,204,0.1) 1px, transparent 0);
+            background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0);
             background-size: 20px 20px;
         }
         .feature-card {
@@ -58,7 +58,7 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
         .cta-button {
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            background: linear-gradient(135deg, #000000 0%, #4a4a4a 100%);
             transition: all 0.3s ease;
         }
         .cta-button:hover {
@@ -68,9 +68,9 @@
         /* WorkTab Brand Colors */
         .text-worktab-secondary { color: #4a4a4a; }
         .text-worktab-muted { color: #8a8a8a; }
-        .bg-worktab-accent-green { background-color: #00a86b; }
-        .bg-worktab-accent-red { background-color: #e74c3c; }
-        .bg-worktab-accent-orange { background-color: #f39c12; }
+        .bg-worktab-accent-green { background-color: #4a4a4a; }
+        .bg-worktab-accent-red { background-color: #8a8a8a; }
+        .bg-worktab-accent-orange { background-color: #F8F7F5; }
         .border-worktab-light { border-color: #e8e8e8; }
         .border-worktab-medium { border-color: #d0d0d0; }
     </style>
@@ -86,15 +86,43 @@
                     </div>
                     <span class="text-xl font-bold text-worktab-text">WorkTab</span>
                 </div>
+                
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Features</a>
                     <a href="#screenshots" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Screenshots</a>
                     <a href="help.html" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Help</a>
                     <a href="#download" class="text-worktab-text-secondary hover:text-worktab-text transition-colors">Download</a>
                 </div>
-                <a href="#download" class="cta-button text-white px-6 py-2 rounded-lg font-medium">
-                    Get WorkTab
-                </a>
+                
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#download" class="cta-button text-white px-6 py-2 rounded-lg font-medium">
+                        Get WorkTab
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-worktab-text/10 transition-colors">
+                    <svg class="w-6 h-6 text-worktab-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-worktab-light">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="#features" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors py-2">Features</a>
+                    <a href="#screenshots" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors py-2">Screenshots</a>
+                    <a href="help.html" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors py-2">Help</a>
+                    <a href="#download" class="block text-worktab-text-secondary hover:text-worktab-text transition-colors py-2">Download</a>
+                    <div class="pt-4">
+                        <a href="#download" class="cta-button text-white px-6 py-3 rounded-lg font-medium w-full text-center block">
+                            Get WorkTab
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -160,7 +188,7 @@
     <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">29+ Powerful Features for Maximum Productivity</h2>
+                <h2 class="text-4xl font-bold mb-4">25+ Powerful Features for Maximum Productivity</h2>
                 <p class="text-xl text-worktab-text-secondary max-w-3xl mx-auto">
                     WorkTab is the most comprehensive tab management solution with advanced features for power users and casual browsers alike.
                 </p>
@@ -359,7 +387,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-2">Keyboard Shortcuts</h4>
-                        <p class="text-sm text-worktab-text-secondary">4 essential shortcuts for power users and quick access</p>
+                        <p class="text-sm text-worktab-text-secondary">4 essential shortcuts: Quick Switcher (Ctrl+K), Full Page (Alt+Shift+F), New Workspace (Alt+Shift+N), Unsuspend (Alt+Shift+Z)</p>
                     </div>
                 </div>
             </div>
@@ -384,8 +412,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
                             </svg>
                         </div>
-                        <h4 class="text-lg font-semibold mb-2">Side Panel Support</h4>
-                        <p class="text-sm text-worktab-text-secondary">Dedicated side panel for persistent workspace access</p>
+                        <h4 class="text-lg font-semibold mb-2">Full Page View</h4>
+                        <p class="text-sm text-worktab-text-secondary">Dedicated full-page interface for comprehensive workspace management</p>
                     </div>
                     
                     <div class="feature-card bg-worktab-primary rounded-xl p-6">
@@ -512,6 +540,59 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Privacy & Permissions -->
+                <div class="bg-worktab-primary rounded-xl p-8 mt-8">
+                    <h3 class="text-xl font-semibold mb-4">Privacy & Permissions</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-worktab-text">Required Permissions:</h4>
+                            <ul class="space-y-2 text-sm text-worktab-text-secondary">
+                                <li class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span><strong>Tabs:</strong> Access tab information to organize them into workspaces</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span><strong>Storage:</strong> Save your workspaces and settings locally</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span><strong>ActiveTab:</strong> Only access tabs when you interact with WorkTab</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-worktab-text">Privacy Promise:</h4>
+                            <ul class="space-y-2 text-sm text-worktab-text-secondary">
+                                <li class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>All data stays on your device - no cloud storage</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>No tracking, analytics, or data collection</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>Open source and transparent</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -580,6 +661,44 @@
 
     <!-- JavaScript for smooth scrolling and interactions -->
     <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // Toggle hamburger icon
+                    const icon = mobileMenuButton.querySelector('svg');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+                    } else {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+                    }
+                });
+                
+                // Close mobile menu when clicking on links
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('svg');
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('svg');
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+                    }
+                });
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
