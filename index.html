@@ -57,6 +57,14 @@
             border-radius: 12px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
+        .screenshot img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
         .cta-button {
             background: linear-gradient(135deg, #000000 0%, #4a4a4a 100%);
             transition: all 0.3s ease;
@@ -130,8 +138,9 @@
     <!-- Hero Section -->
     <section class="gradient-bg hero-pattern min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8">
+            <div class="text-center space-y-12">
+                <!-- Text Content - Centered -->
+                <div class="space-y-8 max-w-4xl mx-auto">
                     <div class="space-y-4">
                         <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
                             Organize Your
@@ -144,7 +153,7 @@
                         </p>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#download" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg text-center">
                             Download for Chrome
                         </a>
@@ -153,20 +162,20 @@
                         </a>
                     </div>
                     
-                    <div class="flex items-center space-x-6 text-sm text-worktab-text-muted">
-                        <div class="flex items-center space-x-2">
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <div class="flex items-center space-x-2 text-sm text-worktab-text-muted">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             <span>Free to use</span>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2 text-sm text-worktab-text-muted">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
                             <span>No account required</span>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2 text-sm text-worktab-text-muted">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
@@ -175,9 +184,10 @@
                     </div>
                 </div>
                 
-                <div class="relative">
+                <!-- Dashboard Image - Below Text -->
+                <div class="relative max-w-4xl mx-auto">
                     <div class="screenshot">
-                        <img src="hero.png" alt="WorkTab Extension Interface" class="w-full h-auto rounded-2xl shadow-2xl">
+                        <img src="hero.png" alt="WorkTab Extension Interface" class="max-w-full h-auto rounded-2xl shadow-2xl object-contain" style="max-height: 600px; width: auto; height: auto;" loading="eager">
                     </div>
                 </div>
             </div>
@@ -387,7 +397,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-2">Keyboard Shortcuts</h4>
-                        <p class="text-sm text-worktab-text-secondary">4 essential shortcuts: Quick Switcher (Ctrl+K), Full Page (Alt+Shift+F), New Workspace (Alt+Shift+N), Unsuspend (Alt+Shift+Z)</p>
+                        <p class="text-sm text-worktab-text-secondary">3 essential shortcuts: Full Page (Alt+Shift+F / Option+Shift+F), New Workspace (Alt+Shift+N / Option+Shift+N), Unsuspend (Alt+Shift+Z / Option+Shift+Z)</p>
                     </div>
                 </div>
             </div>
@@ -480,9 +490,9 @@
                     </div>
                 </div>
                 
-                <div class="relative">
+                <div class="relative max-w-2xl mx-auto">
                     <div class="bg-white rounded-2xl p-6 shadow-2xl screenshot">
-                        <img src="worktab1.png" alt="WorkTab Extension Interface" class="w-full h-auto rounded-lg">
+                        <img src="worktab1.png" alt="WorkTab Extension Interface" class="max-w-full h-auto rounded-lg object-contain" style="max-height: 400px;">
                     </div>
                 </div>
             </div>
