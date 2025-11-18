@@ -239,18 +239,12 @@
                         <p class="text-worktab-text-secondary">For power users and professionals</p>
                     </div>
                     
-                    <div class="space-y-3 mb-8">
-                        <a href="#" 
-                           id="upgrade-monthly"
-                           class="block w-full cta-button text-white px-6 py-3 rounded-lg font-semibold text-center">
-                            Upgrade Monthly - $9.99/mo
-                        </a>
-                        <a href="#" 
-                           id="upgrade-yearly"
-                           class="block w-full border-2 border-worktab-text text-worktab-text px-6 py-3 rounded-lg font-semibold text-center hover:bg-worktab-text hover:text-white transition-all">
-                            Upgrade Yearly - $79.99/yr
-                        </a>
-                    </div>
+                    <a href="https://worktab.lemonsqueezy.com/buy/7a959600-7b2d-4f0d-801b-cbcc48173af5" 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="block w-full cta-button text-white px-6 py-3 rounded-lg font-semibold text-center mb-8">
+                        Upgrade to Pro - Choose Plan
+                    </a>
                     
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-start">
@@ -387,7 +381,7 @@
                    target="_blank" rel="noopener noreferrer">
                     Download Free
                 </a>
-                <a href="https://worktab.lemonsqueezy.com/checkout/buy/1097010" 
+                <a href="https://worktab.lemonsqueezy.com/buy/7a959600-7b2d-4f0d-801b-cbcc48173af5" 
                    class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-worktab-text transition-all">
                     Upgrade to Pro
                 </a>
@@ -487,17 +481,8 @@
                 });
             }
 
-            // Update upgrade button URLs with Lemon Squeezy checkout URLs
-            const monthlyBtn = document.getElementById('upgrade-monthly');
-            const yearlyBtn = document.getElementById('upgrade-yearly');
-            
-            // Lemon Squeezy checkout URLs
-            if (monthlyBtn) {
-                monthlyBtn.href = 'https://worktab.lemonsqueezy.com/checkout/buy/1097010';
-            }
-            if (yearlyBtn) {
-                yearlyBtn.href = 'https://worktab.lemonsqueezy.com/checkout/buy/1097016';
-            }
+            // Upgrade button is now directly linked in HTML
+            // Users can choose Monthly or Yearly on the Lemon Squeezy checkout page
         });
     </script>
 </body>
