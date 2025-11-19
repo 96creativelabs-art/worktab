@@ -33,16 +33,14 @@ export default async function handler(req, res) {
     }
 
     // Validate license with Lemon Squeezy API
-    const response = await fetch('https://api.lemonsqueezy.com/v1/licenses/verify', {
-      method: 'POST',
+    // Lemon Squeezy uses GET /v1/licenses with filter to find license instances
+    // We'll fetch license instances filtered by the license key
+    const response = await fetch(`https://api.lemonsqueezy.com/v1/licenses?filter[license_key]=${encodeURIComponent(licenseKey)}`, {
+      method: 'GET',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
         'Accept': 'application/vnd.api+json'
-      },
-      body: JSON.stringify({
-        license_key: licenseKey
-      })
+      }
     });
 
     if (!response.ok) {
@@ -56,16 +54,33 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // Lemon Squeezy returns { valid: true/false }
-    if (data.valid) {
+    // Lemon Squeezy returns license instances in data array
+    // Check if we found any valid license instances
+    if (data.data && Array.isArray(data.data) && data.data.length > 0) {
+      const licenseInstance = data.data[0];
+      const attributes = licenseInstance.attributes || {};
+      
+      // Check license status
+      // Status can be: 'active', 'inactive', 'expired', etc.
+      const status = attributes.status;
+      const expiresAt = attributes.expires_at;
+      
+      // License is valid if status is 'active' and not expired
+      const now = new Date();
+      const isExpired = expiresAt ? new Date(expiresAt) < now : false;
+      const isValid = status === 'active' && !isExpired;
+      
       return res.status(200).json({
-        valid: true,
-        message: 'License is valid'
+        valid: isValid,
+        message: isValid ? 'License is valid' : `License is ${status}${isExpired ? ' and expired' : ''}`,
+        status: status,
+        expiresAt: expiresAt
       });
     } else {
+      // No license found with this key
       return res.status(200).json({
         valid: false,
-        message: 'License is invalid or expired'
+        message: 'License key not found'
       });
     }
 

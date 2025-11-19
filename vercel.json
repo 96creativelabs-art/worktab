@@ -1,6 +1,11 @@
 {
   "buildCommand": "",
   "outputDirectory": ".",
+  "functions": {
+    "api/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
     {
       "source": "/help",
