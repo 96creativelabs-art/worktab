@@ -33,14 +33,17 @@ export default async function handler(req, res) {
     }
 
     // Validate license with Lemon Squeezy API
-    // Lemon Squeezy uses GET /v1/licenses with filter to find license instances
-    // We'll fetch license instances filtered by the license key
-    const response = await fetch(`https://api.lemonsqueezy.com/v1/licenses?filter[license_key]=${encodeURIComponent(licenseKey)}`, {
-      method: 'GET',
+    // Correct endpoint: POST /v1/licenses/validate
+    const response = await fetch('https://api.lemonsqueezy.com/v1/licenses/validate', {
+      method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
         'Accept': 'application/vnd.api+json'
-      }
+      },
+      body: JSON.stringify({
+        license_key: licenseKey
+      })
     });
 
     if (!response.ok) {
@@ -54,14 +57,17 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // Lemon Squeezy returns license instances in data array
-    // Check if we found any valid license instances
-    if (data.data && Array.isArray(data.data) && data.data.length > 0) {
-      const licenseInstance = data.data[0];
-      const attributes = licenseInstance.attributes || {};
-      
-      // Check license status
-      // Status can be: 'active', 'inactive', 'expired', etc.
+    // Lemon Squeezy validate endpoint returns validation result
+    // Check the response structure - it should indicate if the license is valid
+    if (data.valid === true || data.valid === false) {
+      // Direct valid/invalid response
+      return res.status(200).json({
+        valid: data.valid,
+        message: data.valid ? 'License is valid' : (data.message || 'License is invalid or expired')
+      });
+    } else if (data.data && data.data.attributes) {
+      // Response with license instance data
+      const attributes = data.data.attributes;
       const status = attributes.status;
       const expiresAt = attributes.expires_at;
       
@@ -77,10 +83,10 @@ export default async function handler(req, res) {
         expiresAt: expiresAt
       });
     } else {
-      // No license found with this key
+      // Unexpected response format
       return res.status(200).json({
         valid: false,
-        message: 'License key not found'
+        message: 'License validation failed - unexpected response format'
       });
     }
 
